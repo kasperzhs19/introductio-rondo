@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>💌 Для тебя</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Quicksand', cursive;
+  background: #05010a;
+  overflow: hidden;
+  color: white;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: 1s ease;
+  z-index: 2;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.card { 
+  max-width: 850px; 
+}
+
+.card h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Quicksand', cursive;
+  font-weight: 600;
+}
+
+#yes { background: #ff4d6d; color: white; }
+#no { background: #ccc; position: absolute; }
+
+.story {
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.7;
+  max-height: 70vh;
+  overflow-y: auto;
+  font-size: 16px;
+  font-family: 'Quicksand', cursive;
+  letter-spacing: 0.3px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .card {
+    max-width: 95%;
+  }
+
+  .card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 15px 0;
+  }
+
+  button {
+    padding: 16px 32px;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 12px;
+  }
+
+  .story {
+    font-size: 17px;
+    line-height: 1.9;
+    max-height: 75vh;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .page {
+    padding: 15px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .story {
+    font-size: 16px;
+    line-height: 1.8;
+    max-height: 80vh;
+    padding: 15px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- PAGE 1 -->
+<div class="page" id="p1">
+  <div class="card">
+    <h2>Ты готова увидеть мою историю, которая изменила мой мир? ❤️</h2>
+    <button id="yes">Да</button>
+    <button id="no">Нет</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page hidden" id="p2">
+  <div class="card">
+    <h2>Начало истории…</h2>
+    <p>Иногда одна встреча меняет всё.</p>
+    <button onclick="next()">Continue</button>
+  </div>
+</div>
+
+<!-- PAGE 3 (ПОЛНЫЙ ОРИГИНАЛ) -->
+<div class="page hidden" id="p3">
+  <div class="card">
+    <div class="story">
+
+💌 Письмо к той, что изменила мой мир ❤️
+
+Я долго не знал, как правильно начать это письмо… потому что обычных слов здесь просто недостаточно. Это не просто текст и не просто признание — это всё, что я когда-то чувствовал и продолжаю чувствовать внутри. ✨
+
+В моей жизни было много дней, которые просто проходили мимо, не оставляя ничего после себя. Я жил, как будто просто существовал, не особо задумываясь, что одна встреча способна всё перевернуть. Но потом появилась ты… ❤️
+
+И в тот самый момент, когда я увидел тебя впервые, внутри будто всё замерло и одновременно загорелось. Мои глаза загорелись так, как не загорались никогда раньше. Я смотрел на тебя и понимал — именно такого человека я искал всю свою жизнь, даже если сам этого до конца не осознавал. 💫
+
+Ты даже не представляешь, как сильно изменила меня. До тебя я жил будто на автомате — дни шли, люди приходили и уходили, всё было каким-то пустым и одинаковым. Но рядом с тобой мне захотелось стать лучше. Не ради чужого мнения, не ради показухи, а по-настоящему. 🌹
+
+Ты стала причиной того, что я начал меняться в лучшую сторону. Рядом с тобой мне захотелось расти, быть сильнее, добрее, увереннее. Ты будто открыла во мне человека, которого я сам раньше не замечал. И самое удивительное — тебе даже не пришлось просить меня об этом. Одного твоего существования оказалось достаточно. ❤️
+
+Иногда мне кажется, что судьба специально вела меня через все прошлые ошибки и разочарования лишь для того, чтобы однажды привести к тебе. Потому что рядом с тобой всё стало ощущаться иначе. Мир стал теплее, музыка — глубже, а обычные моменты — бесценными. ✨
+
+Я люблю не только твою красоту, хотя она сводит меня с ума. Я люблю то, как ты смеёшься, как смотришь, как говоришь, как случайно становишься причиной моих мыслей среди ночи. Люблю то спокойствие, которое появляется внутри, когда я рядом с тобой. И одновременно люблю то безумие, которое ты вызываешь во мне. 💌
+
+Раньше я не верил, что можно встретить человека и почувствовать: «вот он». Но с тобой именно так и произошло. Будто среди тысяч лиц мои глаза искали только тебя. И когда нашли — уже не смогли смотреть иначе. ❤️
+
+Спасибо тебе за то, что ты появилась в моей жизни. За то, что стала моим вдохновением. За то, что именно ты сумела коснуться моей души так глубоко. И если однажды меня спросят, что значит встретить “своего человека”, я просто расскажу им о тебе… 💞
+
+    </div>
+
+    <button onclick="next()">Continue</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page hidden" id="p4">
+  <div class="card">
+    <h2>Я люблю тебя ❤️</h2>
+    <p>И это не просто слова… ты стала самым важным человеком в моей жизни.</p>
+  </div>
+</div>
+
+<script>
+
+let page = 1;
+
+function next() {
+  document.getElementById("p"+page).classList.add("hidden");
+  page++;
+  document.getElementById("p"+page).classList.remove("hidden");
+}
+
+/* NO BUTTON */
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.left = Math.random()*80 + "vw";
+  noBtn.style.top = Math.random()*80 + "vh";
+});
+
+/* YES */
+document.getElementById("yes").onclick = () => {
+  document.getElementById("p1").classList.add("hidden");
+  document.getElementById("p2").classList.remove("hidden");
+  page = 2;
+};
+
+/* BACKGROUND HEARTS */
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+const hearts = [];
+
+for (let i = 0; i < 40; i++) {
+  hearts.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    s: Math.random() * 2 + 1,
+    v: Math.random() * 1 + 0.3
+  });
+}
+
+function drawHeart(x, y, size) {
+  ctx.fillStyle = "rgba(255,77,109,0.7)";
+  ctx.beginPath();
+  ctx.arc(x, y, size, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function animate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  for (let h of hearts) {
+    drawHeart(h.x, h.y, h.s);
+    h.y += h.v;
+
+    if (h.y > canvas.height) {
+      h.y = -10;
+      h.x = Math.random() * canvas.width;
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
